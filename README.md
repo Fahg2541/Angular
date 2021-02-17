@@ -1,3 +1,7 @@
+#install node_module
+
+npm i node-modules
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0-next.0.
