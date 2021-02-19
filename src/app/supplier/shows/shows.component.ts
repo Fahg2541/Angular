@@ -5,7 +5,12 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { SupplierService } from '../../service/supplier.service';
 import { HttpClient } from '@angular/common/http';
-
+export interface UserData {
+  id: string;
+  name: string;
+  progress: string;
+  color: string;
+}
 
 /** Constants used to fill up our data base. */
 // const COLORS: string[] = [
@@ -25,48 +30,53 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './shows.component.html',
   styleUrls: ['./shows.component.css']
 })
-export class ShowsComponent  {
+export class ShowsComponent implements AfterViewInit {
 
-  materialList: any[]=[];
-  imageDirectoyPath:any = 'http://127.0.0.1:5000/public/image/';
-  material_id: string;
-  Search: string;
-  materialMessage: string;
   dataArr: any;
-  material_name:any;
-  page:any = 1;
-  limit: any = 5;
-  skip: any;
-  categoryArr:any;
-  totalCount: any;
+
   constructor(private http: HttpClient,
     private SupplierService: SupplierService,) {
 
   }
-  ngOnInit(): void {
-    this.getMeterial();
+  displayedColumns: string[] = ['id', 'supplier_name', 'supplier_surname', 'store_name', 'email', 'phone', 'address'];
+  dataSource: MatTableDataSource<UserData>;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
+  // constructor() {
+  //   // Create 100 users
+  //   const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
+
+  //   // Assign the data to the data source for the table to render
+  //   this.dataSource = new MatTableDataSource(users);
+  // }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
-  getMeterial(){
-   
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
+  getMeterial()
+  {
+
     this.SupplierService.getData().subscribe(res=>{
-      // this.spinner.hide();
       this.dataArr=res;
+
     })
   }
 
-//   deleteMaterial(id){
-//     if (confirm('คุณต้องการลบหรือไม่ ?') === true)
-//     this.SupplierService.deletesupplier(id).subscribe(result => {
-//       this.getData();
-//       // this.spinner.show();
-//       // this.toastr.success('ลบข้อมูลวัตถุดิบสำเร็จ!'); 
-//     },
-//     err => {
-//     // this.toastr.error('ลบล้มข้อมูลวัตถุดิบเหลว!');
-//     // this.spinner.show();
-//     console.log(err);
-//     });
-// }
+
+}
 
 /** Builds and returns a new User. */
 // function createNewUser(id: number): UserData {
@@ -78,5 +88,5 @@ export class ShowsComponent  {
 //     name: name,
 //     progress: Math.round(Math.random() * 100).toString(),
 //     color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-//   }
-}
+//   };
+// }
