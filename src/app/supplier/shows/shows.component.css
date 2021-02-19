@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+}
+
+/* .mat-form-field {
+  font-size: 14px;
+  width: 100%;
+} */
+
+td, th {
+  width: 10%;
+}
+/* 
+th.mat-header-cell {
+  text-align: left;
+  font-family: 'Mali', cursive;
+} */
+table {
+  border-collapse: separate;
+  text-indent: initial;
+  border-spacing: 2px;
+}
+th {
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  text-align: -internal-center;
+  font-family: 'Mali', cursive;
+}
