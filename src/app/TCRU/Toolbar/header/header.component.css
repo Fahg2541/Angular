@@ -3,15 +3,15 @@
     padding-left: 7px;
     background: #79994a;
     color: #fff;
-    font-family: 'Mali', cursive;
+    font-family: 'Kanit', sans-serif;
 }
 
 .text {
     flex: 1 1 auto;
     text-align: center;
-    font-family: 'Mali', cursive;
+    font-family: 'Kanit', sans-serif;
 }
 
 .logout {
-    font-family: 'Mali', cursive;
+    font-family: 'Kanit', sans-serif;
 }

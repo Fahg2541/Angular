@@ -7,7 +7,7 @@
 .menu-list {
     flex: 1;
     justify-content: normal;
-    font-family: 'Mali', cursive;
+    font-family: 'Kanit', sans-serif;
 }
 
 .icon {
@@ -22,7 +22,7 @@
 
 .label {
     margin: 0;
-    font-family: 'Mali', cursive;
+    font-family: 'Kanit', sans-serif;
     font-size: 100;
 }
 
@@ -67,7 +67,7 @@
 }
 
 .list {
-    font-family: 'Mali', cursive;
+    font-family: 'Kanit', sans-serif;
 }
 
 .side {
