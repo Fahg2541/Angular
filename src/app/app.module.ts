@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -11,12 +11,13 @@ import { ToggleSidebarComponent } from './TCRU/Toolbar/toggle-sidebar/toggle-sid
 import { SidebarComponent } from './TCRU/Toolbar/sidebar/sidebar.component';
 import { CustomersComponent } from './TCRU/customers/customers.component';
 import { ReportComponent } from './TCRU/report/report.component';
-
+import { AddstockComponent } from './stockm/addstock/addstock.component';
+import { ShowMaterialComponent } from './TCRU/Material/show-material/show-material.component';
+import { ShowsComponent } from './supplier/shows/shows.component';
+import { AddsComponent } from './supplier/adds/adds.component';
 
 import { ConfigService } from './shared/utils';
 
-import { ShowsComponent } from './supplier/shows/shows.component';
-import { AddsComponent } from './supplier/adds/adds.component';
 import {A11yModule} from '@angular/cdk/a11y';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -60,7 +61,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
-import { AddstockComponent } from './stockm/addstock/addstock.component';
+import { FlexLayoutModule  } from '@angular/flex-layout';
 
 const appRoutes: Routes = [
   {
@@ -88,8 +89,10 @@ const appRoutes: Routes = [
     path: 'addstock', 
     component: AddstockComponent 
   },
-  
-
+  {
+    path: 'showMaterial',
+    component: ShowMaterialComponent
+  }
 ];
 
 @NgModule({
@@ -102,7 +105,8 @@ const appRoutes: Routes = [
     ReportComponent,
     ShowsComponent,
     AddsComponent,
-    AddstockComponent
+    AddstockComponent,
+    ShowMaterialComponent
   ],
   imports: [
     BrowserModule,
@@ -166,6 +170,7 @@ const appRoutes: Routes = [
     OverlayModule,
     PortalModule,
     ScrollingModule,
+    FlexLayoutModule 
   ],
   providers: [
     ConfigService,
