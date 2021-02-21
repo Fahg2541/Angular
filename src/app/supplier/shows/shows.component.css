@@ -1,22 +1,24 @@
 table {
-  width: 100%;
+    width: 100%;
 }
 
 .mat-form-field {
-  font-size: 14px;
-  width: 100%;
+    font-size: 14px;
+    width: 100%;
 }
 
-td, th {
-  width: 10%;
+td,
+th {
+    width: 10%;
 }
 
 th.mat-header-cell {
-  text-align: left;
-  font-family: 'Mali', cursive;
+    text-align: left;
+    font-family: 'Kanit', sans-serif;
 }
+
 table {
-  border-collapse: separate;
-  text-indent: initial;
-  border-spacing: 2px;
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
 }
