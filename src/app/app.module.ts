@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -62,6 +62,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { FlexLayoutModule  } from '@angular/flex-layout';
+import { DialogCustomerComponent } from './TCRU/dialog-customer/dialog-customer.component';
 
 const appRoutes: Routes = [
   {
@@ -106,7 +107,11 @@ const appRoutes: Routes = [
     ShowsComponent,
     AddsComponent,
     AddstockComponent,
-    ShowMaterialComponent
+    ShowMaterialComponent,
+    DialogCustomerComponent
+  ],
+  entryComponents: [
+    DialogCustomerComponent
   ],
   imports: [
     BrowserModule,
@@ -174,8 +179,6 @@ const appRoutes: Routes = [
   ],
   providers: [
     ConfigService,
-
-  
   ],
   bootstrap: [
     AppComponent,

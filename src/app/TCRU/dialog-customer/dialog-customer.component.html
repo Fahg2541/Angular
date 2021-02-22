@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>เพิ่มข้อมูลลูกค้า</h2>
+
+<mat-dialog-content>
+    <input type="file" multiple class="custom-file-input" multiple formControlName="importFile" id="importFile" (change)="onFileChange($event.target.files)">
+</mat-dialog-content>
+
+<mat-dialog-action>
+    <button mat-button mat-dialog-close mat-dialog-close="false">ยืนยัน</button>
+    <button mat-button mat-dialog-close mat-dialog-close="true">ปิด</button>
+</mat-dialog-action>
