@@ -15,6 +15,7 @@ import { AddstockComponent } from './stockm/addstock/addstock.component';
 import { ShowMaterialComponent } from './TCRU/Material/show-material/show-material.component';
 import { ShowsComponent } from './supplier/shows/shows.component';
 import { AddsComponent } from './supplier/adds/adds.component';
+import { DialogCustomerComponent } from './TCRU/dialog-customer/dialog-customer.component';
 
 import { ConfigService } from './shared/utils';
 
@@ -62,7 +63,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { FlexLayoutModule  } from '@angular/flex-layout';
-import { DialogCustomerComponent } from './TCRU/dialog-customer/dialog-customer.component';
 
 const appRoutes: Routes = [
   {
