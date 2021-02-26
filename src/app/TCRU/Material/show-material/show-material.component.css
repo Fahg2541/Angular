@@ -36,3 +36,11 @@ table {
 .flex {
     flex: 1 1 auto;
 }
+
+.font {
+    color: black;
+}
+
+.flex {
+    margin-left: 500px;
+}

@@ -3,11 +3,13 @@
         <div class="example-button-row">
             <button mat-stroked-button>เพิ่มข้อมูลวัตถุดิบ</button>
         </div>
-        <span class="flex"></span>
-        <mat-form-field>
-            <mat-label>Filter</mat-label>
-            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
-        </mat-form-field>
+        <div fxLayout="column-reverse" class="flex">
+            <mat-form-field>
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+        </div>
+
     </div>
 
     <div class="content-wrapper">
@@ -17,24 +19,24 @@
 
                 <!-- ID Column -->
                 <ng-container matColumnDef="id">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> รหัสวัตถุดิบ </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="font"><b>รหัสวัตถุดิบ</b> </th>
                     <td mat-cell *matCellDef="let row of dataArr"> {{row.id}} </td>
                 </ng-container>
 
                 <!-- Progress Column -->
                 <ng-container matColumnDef="name">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ชื่อ </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="font"><b>ชื่อ</b></th>
                     <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
                 </ng-container>
 
                 <!-- Name Column -->
                 <ng-container matColumnDef="weight">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> น้ำหนัก/หน่วย </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="font"><b>น้ำหนัก/หน่วย</b></th>
                     <td mat-cell *matCellDef="let row"> {{row.name}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="price">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> ราคา/หน่วย </th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="font"><b>ราคา/หน่วย</b></th>
                     <td mat-cell *matCellDef="let row"> {{row.name}} </td>
                 </ng-container>
 

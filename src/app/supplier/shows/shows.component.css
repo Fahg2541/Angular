@@ -22,3 +22,11 @@ table {
     text-indent: initial;
     border-spacing: 2px;
 }
+
+.font {
+    color: black;
+}
+
+.flex {
+    margin-left: 1100px;
+}
