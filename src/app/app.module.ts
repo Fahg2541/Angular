@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,10 +11,11 @@ import { ToggleSidebarComponent } from './TCRU/Toolbar/toggle-sidebar/toggle-sid
 import { SidebarComponent } from './TCRU/Toolbar/sidebar/sidebar.component';
 import { CustomersComponent } from './TCRU/customers/customers.component';
 import { ReportComponent } from './TCRU/report/report.component';
+import { CommonModule }  from '@angular/common';
+import { Uniquematerial_nameValidatorDirective } from 'src/app/Service/unique-material-name-validator.directive';
 
-
+import { NgxSpinnerModule } from "ngx-spinner";
 import { ConfigService } from './shared/utils';
-
 import { ShowsComponent } from './supplier/shows/shows.component';
 import { AddsComponent } from './supplier/adds/adds.component';
 import {A11yModule} from '@angular/cdk/a11y';
@@ -60,7 +61,20 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
+import { ToastrModule } from 'ngx-toastr';
 import { AddstockComponent } from './stockm/addstock/addstock.component';
+import { AddmComponent } from './material/addm/addm.component';
+import { ShowmaterialComponent } from './material/showmaterial/showmaterial.component';
+import { EditmComponent } from './material/editm/editm.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AddpComponent } from './product/addp/addp.component';
+import { ShowpComponent } from './product/showp/showp.component';
+import { EditpComponent } from './product/editp/editp.component';
+
+import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { StockComponent } from './stockp/stock/stock.component';
+import { ShowlotComponent } from './stockp/showlot/showlot.component';
+import { AddlotComponent } from './stockp/addlot/addlot.component';
 
 const appRoutes: Routes = [
   {
@@ -88,7 +102,22 @@ const appRoutes: Routes = [
     path: 'addstock', 
     component: AddstockComponent 
   },
-  
+  { 
+    path: 'addm', 
+    component: AddmComponent 
+  },
+  { 
+    path: 'formm', 
+    component: ShowmaterialComponent 
+  },
+  { 
+    path: 'editm/:id', 
+    component: EditmComponent 
+  },
+  { path: 'addp', component: AddpComponent },
+  { path: 'showp', component: ShowpComponent },
+  { path: 'editp/:id', component: EditpComponent },
+  { path: 'addstm', component: AddstockComponent },
 
 ];
 
@@ -102,9 +131,21 @@ const appRoutes: Routes = [
     ReportComponent,
     ShowsComponent,
     AddsComponent,
-    AddstockComponent
+    AddstockComponent,
+    AddmComponent,
+    ShowmaterialComponent,
+    EditmComponent,
+    ShowpComponent,
+    EditpComponent,
+    AddpComponent,
+    Uniquematerial_nameValidatorDirective,
+    AddstockComponent,
+    StockComponent,
+    ShowlotComponent,
+    AddlotComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -166,6 +207,13 @@ const appRoutes: Routes = [
     OverlayModule,
     PortalModule,
     ScrollingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule,
+    NgbPaginationModule,
+    NgbAlertModule,
+    ToastrModule.forRoot(),
+    NgxSpinnerModule
   ],
   providers: [
     ConfigService,

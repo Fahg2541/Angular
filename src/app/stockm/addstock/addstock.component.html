@@ -1,52 +1,108 @@
-<div class="form-viewer">
-    <mat-card>
+<div class="main-container" style=" height:200vh;">
+  <h3 class="card-title">รับสินค้าเข้า</h3>
+<div class="card card-primary">
 
-        <mat-card-title>
-            {{ title }}
-        </mat-card-title>
-
-        <mat-card-content>
-            <div class="mat-elevation-z8">
-                <mat-form-field>
-                    <input  placeholder="Filter">
-                </mat-form-field>
-
-                <table mat-table [dataSource]="dataSource" matSort>
-                    <ng-container matColumnDef="number">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Number</th>
-                        <td mat-cell *matCellDef="let item">{{item.number}}</td>
-                        <td mat-footer-cell *matFooterCellDef>Total</td>
-                    </ng-container>
-                    <ng-container matColumnDef="type">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
-                        <td mat-cell *matCellDef="let item">{{item.type}}</td>
-                        <td mat-footer-cell *matFooterCellDef></td>
-                    </ng-container>
-                    <ng-container matColumnDef="status">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
-                        <td mat-cell *matCellDef="let item">{{item.status}}</td>
-                        <td mat-footer-cell *matFooterCellDef></td>
-                    </ng-container>
-                    <ng-container matColumnDef="units">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Units</th>
-                        <td mat-cell *matCellDef="let item">{{item.units}}</td>
-                        <td mat-footer-cell *matFooterCellDef></td>
-                    </ng-container>
-                    <ng-container matColumnDef="admin">
-                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Admin Data</th>
-                        <td mat-cell *matCellDef="let item">{{item.admin}}</td>
-                        <td mat-footer-cell *matFooterCellDef></td>
-                    </ng-container>
-                    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-                    <tr mat-row *matRowDef="let rowItems; columns: displayedColumns"></tr>
-                    <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
-                </table>
-                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+              <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>เลขที่ใบรับสินค้า</label>
+                                <input formControlName="material_id" type="text" class="form-control"
+                                    placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-2 ">
+                          <label>เลือกคลังสินค้า</label>
+                          <select class="form-control"name="">
+                            <option value="">เลือก</option>
+                            <option ></option>
+                          </select>
+                        </div>
+                        <div class="col-sm-5">
+                          <!-- text input -->
+                          <div class="form-group">
+                              <label>เลขที่ใบสั่งผลิต</label>
+                              <input formControlName="material_id" type="text" class="form-control"
+                                  placeholder="">
+                          </div>
+                      </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>วันที่ผลิต</label>
+                                <input formControlName="material_name" type="text" class="form-control"
+                                    placeholder="01/01/2563 ...">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="form-group">
+                              <label>วันที่หมดอายุ</label>
+                              <input formControlName="material_name" type="text" class="form-control"
+                                  placeholder="01/01/2563 ...">
+                          </div>
+                      </div>
+                      <div class="form-group col-sm-4 ">
+                        <label>พนังงานที่รับสินค้า</label>
+                        <select class="form-control"name="">
+                          <option value="">เลือก</option>
+                          <option ></option>
+                        </select>
+                      </div>
+                    </div>
+                </form>
+                <br>
+                <div class="card card-success">
+                    <div class="card-header">
+                        <h3 class="card-title">สินค้า</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <form>
+                                        
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>รหัสสินค้า</label>
+                                    <input formControlName="material_id" type="text" class="form-control"
+                                        placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label>ชื่อสินค้า</label>
+                                    <input formControlName="material_name" type="text" class="form-control"
+                                        placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <!-- text input -->
+                                <div class="form-group">
+                                    <label>จำนวนสินค้า</label>
+                                    <input formControlName="weight" type="text" class="form-control"
+                                        placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <label>ราคา</label>
+                                    <input formControlName="weight" type="text" class="form-control"
+                                        placeholder="">
+                                </div>
+                            </div>
+                                <div class="col-sm-1">
+                                    <br>
+                                    <a href="#" aria-label="submit" class="btn btn-block btn-success" [routerLink]="['/addm']"
+                                        routerLinkActive="router-link-active">ยืนยัน</a>
+                                </div>
+        
+                            
+                                
+                        </div>
+                    </form>
+                    <!-- /.card-body -->
+                </div>
             </div>
-        </mat-card-content>
-
-        <mat-card-actions>
-            <a mat-raised-button color="primary" routerLink="/new-item">New Item</a>
-        </mat-card-actions>
-
-    </mat-card>
+            <!-- /.card-body -->
+          </div>
+        </div>
