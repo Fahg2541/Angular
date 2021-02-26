@@ -1,9 +1,5 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-body {
-    font-family: 'Kanit', cursive;
-  margin: 0;
-  /* padding: 30px; */
-}
+
 
 .version-info {
   font-size: 8pt;

@@ -7,11 +7,7 @@
 .menu-list {
     flex: 1;
     justify-content: normal;
-<<<<<<< HEAD
     font-family: 'Kanit', cursive;
-=======
-    font-family: 'Kanit', sans-serif;
->>>>>>> dedb96a1e6d56cc6f9af7828e54d021dd4926c13
 }
 
 .icon {
@@ -26,11 +22,7 @@
 
 .label {
     margin: 0;
-<<<<<<< HEAD
     font-family: 'Kanit', cursive;
-=======
-    font-family: 'Kanit', sans-serif;
->>>>>>> dedb96a1e6d56cc6f9af7828e54d021dd4926c13
     font-size: 100;
 }
 
@@ -63,7 +55,6 @@
     display: flex;
     height: 100%;
     align-items: center;
-    justify-content: center;
 }
 
 .arrow-down {
@@ -74,13 +65,7 @@
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAYAAABr5z2BAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAbrQAAG60BIeRSlQAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMC41ZYUyZQAAANpJREFUOE9jGJzAwsJCyM7OztPMzIwPKkQ8sLe353F2dl7v6ur6BEjPBmI1qBRxAGgAh6OjY4m7u/t/oCF/gQacBtJuUGmiAQvQC7YuLi5fgZr/Ozk5fQCyC6ByxANLS0sxoAsuAzX/dXNz+w9kzwKGDydUmijADPSSA9AVv4CG/Ae5CIhjoXL4gY2NjSjQxlKghtdQb5wGGhYClcYPgBotgQG5BqjxN9TpM4CaNaDS+AEoDQA13ABpBNr+G2hQkpWVFS9UmijABDTAEGj7DqAhIFuZIMLYAAMDAPuUQ9EUeG3QAAAAAElFTkSuQmCC) no-repeat right;
 }
 
-.list {
-<<<<<<< HEAD
-    font-family: 'Kanit', cursive;
-=======
-    font-family: 'Kanit', sans-serif;
->>>>>>> dedb96a1e6d56cc6f9af7828e54d021dd4926c13
-}
+
 
 .side {
     min-width: 60px;

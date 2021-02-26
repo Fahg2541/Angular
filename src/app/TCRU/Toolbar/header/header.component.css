@@ -3,27 +3,15 @@
     padding-left: 7px;
     background: #79994a;
     color: #fff;
-<<<<<<< HEAD
-    font-family: 'Kanit', cursive;
-=======
-    font-family: 'Kanit', sans-serif;
->>>>>>> dedb96a1e6d56cc6f9af7828e54d021dd4926c13
+    
 }
 
 .text {
     flex: 1 1 auto;
     text-align: center;
-<<<<<<< HEAD
     font-family: 'Kanit', cursive;
 }
 
 .logout {
     font-family: 'Kanit', cursive;
-=======
-    font-family: 'Kanit', sans-serif;
-}
-
-.logout {
-    font-family: 'Kanit', sans-serif;
->>>>>>> dedb96a1e6d56cc6f9af7828e54d021dd4926c13
 }

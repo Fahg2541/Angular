@@ -13,13 +13,8 @@ th {
 }
 
 th.mat-header-cell {
-<<<<<<< HEAD
   text-align: left;
   font-family: 'Kanit', cursive;
-=======
-    text-align: left;
-    font-family: 'Kanit', sans-serif;
->>>>>>> dedb96a1e6d56cc6f9af7828e54d021dd4926c13
 }
 
 table {
