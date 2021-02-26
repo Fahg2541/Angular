@@ -113,10 +113,22 @@ const appRoutes: Routes = [
     path: 'editm/:id', 
     component: EditmComponent 
   },
-  { path: 'addp', component: AddpComponent },
-  { path: 'showp', component: ShowpComponent },
-  { path: 'editp/:id', component: EditpComponent },
-  { path: 'addstm', component: AddstockComponent },
+  { 
+    path: 'addp', 
+    component: AddpComponent 
+  },
+  { 
+    path: 'showp', 
+    component: ShowpComponent 
+  },
+  { 
+    path: 'editp/:id', 
+    component: EditpComponent 
+  },
+  { 
+    path: 'addstm', 
+    component: AddstockComponent 
+  },
 
 ];
 
