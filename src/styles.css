@@ -1,13 +1,16 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-
 body {
-    font-family: 'Mali', cursive;
-  margin: 0;
-  /* padding: 30px; */
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    /* padding: 30px; */
+}
+
+* {
+    font-family: 'Kanit', sans-serif;
 }
 
 .version-info {
-  font-size: 8pt;
-  float: right;
-  margin: 8px;
+    font-size: 8pt;
+    float: right;
+    margin: 8px;
 }
