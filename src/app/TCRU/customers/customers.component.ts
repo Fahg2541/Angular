@@ -6,7 +6,6 @@ import { HttpClient } from '@angular/common/http';
 import { CustomersService } from '../../Service/customers.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogCustomerComponent } from '../dialog-customer/dialog-customer.component';
-import { ExcelService } from '../../Service/excel.service';
 
 export interface UserData {
   id: string;
@@ -26,8 +25,7 @@ export class CustomersComponent implements AfterViewInit {
 
   constructor(private http: HttpClient,
     private Customers: CustomersService,
-    public dialog: MatDialog,
-    private excel: ExcelService) { }
+    public dialog: MatDialog) { }
 
     openDialog(){
       let dialogRef = this.dialog.open(DialogCustomerComponent);
@@ -56,12 +54,6 @@ export class CustomersComponent implements AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
-  downlondExcel() {
-
-    // console.log('called');
-     this.excel.downlondExcel();
-   }
 
   getCustomer()
   {
