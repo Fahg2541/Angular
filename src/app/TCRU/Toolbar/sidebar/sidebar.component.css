@@ -7,7 +7,11 @@
 .menu-list {
     flex: 1;
     justify-content: normal;
+<<<<<<< HEAD
     font-family: 'Kanit', cursive;
+=======
+    font-family: 'Kanit', sans-serif;
+>>>>>>> dedb96a1e6d56cc6f9af7828e54d021dd4926c13
 }
 
 .icon {
@@ -22,7 +26,11 @@
 
 .label {
     margin: 0;
+<<<<<<< HEAD
     font-family: 'Kanit', cursive;
+=======
+    font-family: 'Kanit', sans-serif;
+>>>>>>> dedb96a1e6d56cc6f9af7828e54d021dd4926c13
     font-size: 100;
 }
 
@@ -67,7 +75,11 @@
 }
 
 .list {
+<<<<<<< HEAD
     font-family: 'Kanit', cursive;
+=======
+    font-family: 'Kanit', sans-serif;
+>>>>>>> dedb96a1e6d56cc6f9af7828e54d021dd4926c13
 }
 
 .side {

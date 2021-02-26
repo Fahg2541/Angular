@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
@@ -15,7 +15,6 @@ import { CommonModule }  from '@angular/common';
 import { Uniquematerial_nameValidatorDirective } from 'src/app/Service/unique-material-name-validator.directive';
 
 import { NgxSpinnerModule } from "ngx-spinner";
-import { ConfigService } from './shared/utils';
 import { ShowsComponent } from './supplier/shows/shows.component';
 import { AddsComponent } from './supplier/adds/adds.component';
 import {A11yModule} from '@angular/cdk/a11y';
@@ -216,9 +215,6 @@ const appRoutes: Routes = [
     NgxSpinnerModule
   ],
   providers: [
-    ConfigService,
-
-  
   ],
   bootstrap: [
     AppComponent,

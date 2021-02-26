@@ -1,7 +1,7 @@
 <div class="main-container" style=" height:90vh;">
     <div fxLayout="row">
         <div class="example-button-row">
-            <button mat-stroked-button (click)="openDialog()">เพิ่มข้อมูลลูกค้า</button>
+            <button mat-stroked-button>เพิ่มข้อมูลวัตถุดิบ</button>
         </div>
         <div fxLayout="column-reverse" class="flex">
             <mat-form-field>
@@ -11,6 +11,7 @@
         </div>
 
     </div>
+
     <div class="content-wrapper">
 
         <div class="mat-elevation-z8">
@@ -18,29 +19,24 @@
 
                 <!-- ID Column -->
                 <ng-container matColumnDef="id">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="font"><b>รหัสลูกค้า</b></th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="font"><b>รหัสวัตถุดิบ</b> </th>
                     <td mat-cell *matCellDef="let row of dataArr"> {{row.id}} </td>
                 </ng-container>
 
                 <!-- Progress Column -->
-                <ng-container matColumnDef="fritsname">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="font"><b> ชื่อ </b></th>
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="font"><b>ชื่อ</b></th>
                     <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
                 </ng-container>
 
                 <!-- Name Column -->
-                <ng-container matColumnDef="lastname">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="font"><b>นามสกุล</b></th>
+                <ng-container matColumnDef="weight">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="font"><b>น้ำหนัก/หน่วย</b></th>
                     <td mat-cell *matCellDef="let row"> {{row.name}} </td>
                 </ng-container>
 
-                <ng-container matColumnDef="address">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="font"><b> ที่อยู่ </b></th>
-                    <td mat-cell *matCellDef="let row"> {{row.name}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="phonenumber">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="font"><b>เบอร์โทรศัพท์</b></th>
+                <ng-container matColumnDef="price">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="font"><b>ราคา/หน่วย</b></th>
                     <td mat-cell *matCellDef="let row"> {{row.name}} </td>
                 </ng-container>
 

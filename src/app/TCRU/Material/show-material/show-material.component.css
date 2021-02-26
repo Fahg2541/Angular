@@ -1,3 +1,13 @@
+.example-button-row {
+    display: table-cell;
+    width: 490px;
+    font-family: 'Kanit', sans-serif;
+}
+
+.example-button-row .mat-button-base {
+    margin: 20px 1px 8px 20px;
+}
+
 table {
     width: 100%;
 }
@@ -13,13 +23,8 @@ th {
 }
 
 th.mat-header-cell {
-<<<<<<< HEAD
-  text-align: left;
-  font-family: 'Kanit', cursive;
-=======
     text-align: left;
     font-family: 'Kanit', sans-serif;
->>>>>>> dedb96a1e6d56cc6f9af7828e54d021dd4926c13
 }
 
 table {
@@ -28,10 +33,14 @@ table {
     border-spacing: 2px;
 }
 
+.flex {
+    flex: 1 1 auto;
+}
+
 .font {
     color: black;
 }
 
 .flex {
-    margin-left: 1100px;
+    margin-left: 500px;
 }
