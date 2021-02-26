@@ -3,13 +3,13 @@
     padding-left: 7px;
     background: #79994a;
     color: #fff;
-    
 }
 
 .text {
     flex: 1 1 auto;
     text-align: center;
     font-family: 'Kanit', cursive;
+    font-size: 20px;
 }
 
 .logout {

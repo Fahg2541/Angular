@@ -2,11 +2,11 @@
     <img src="assets/Image/TCRU.jpg" alt="TCRU" width="60" />
     <app-toggle-sidebar></app-toggle-sidebar>
     <span class="text">ระบบการจัดการการผลิตสินค้า</span>
-    <b><button class="logout" mat-button [matMenuTriggerFor]="dropDown">โปรไฟล์<mat-icon class="ml-1">arrow_drop_down</mat-icon></button></b>
+    <button class="logout" mat-button [matMenuTriggerFor]="dropDown">โปรไฟล์<mat-icon class="ml-1">arrow_drop_down</mat-icon></button>
     <mat-menu #dropDown="matMenu" overlapTrigger="false">
         <button mat-menu-item>
           <mat-icon>exit_to_app</mat-icon>
-          <b><span class="logout">ออกจากระบบ</span></b>
+          <span class="logout">ออกจากระบบ</span>
     </button>
     </mat-menu>
 </mat-toolbar>
