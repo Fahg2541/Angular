@@ -9,6 +9,7 @@ import { DialogCustomerComponent } from '../dialog-customer/dialog-customer.comp
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormControl, FormGroup, FormBuilder, FormsModule, Validators } from '@angular/forms';
 import * as _ from 'lodash';
+import { NgxSpinnerService } from "ngx-spinner";
 
 export interface UserData {
   id: string;
@@ -56,7 +57,8 @@ export class CustomersComponent implements AfterViewInit {
   constructor(private http: HttpClient,
     private Customers: CustomersService,
     public dialog: MatDialog,
-    private route: ActivatedRoute,) { }
+    private route: ActivatedRoute,
+    private spinner: NgxSpinnerService,) { }
 
     openDialog(){
       let dialogRef = this.dialog.open(DialogCustomerComponent);
@@ -85,6 +87,26 @@ export class CustomersComponent implements AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
+  getCustomers()
+    {
+      this.spinner.show();
+      if(this.page == 1){
+          this.skip = 0;
+      } else{
+          this.skip = (this.page-1) * this.limit;
+      }
+      var requestObj = {
+             'limit': this.limit,
+             'skip':  this.skip
+             
+      }
+      this.Customers.getData1(requestObj).subscribe((res:any)=>{
+        this.spinner.hide();
+        this.dataArr=res.data;
+        this.totalCount = res.totalRecord;
+      })
+    }
 
   // getCustomer()
   // {

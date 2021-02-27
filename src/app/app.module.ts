@@ -137,6 +137,10 @@ const appRoutes: Routes = [
   {
     path: 'showOrderMaterials',
     component: ShowOrderMaterialsComponent
+  },
+  {
+    path: 'addOrderMaterials',
+    component: PurchaseOrderComponent
   }
 
 ];
