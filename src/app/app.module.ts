@@ -76,6 +76,9 @@ import { AddpComponent } from './product/addp/addp.component';
 import { ShowpComponent } from './product/showp/showp.component';
 import { EditpComponent } from './product/editp/editp.component';
 import { DialogCustomerComponent } from './TCRU/dialog-customer/dialog-customer.component';
+import { PurchaseOrderComponent } from './OrderMaterials/purchase-order/purchase-order.component';
+import { ShowOrderMaterialsComponent } from './OrderMaterials/show-order-materials/show-order-materials.component';
+import { EditStatusMaterialsComponent } from './OrderMaterials/edit-status-materials/edit-status-materials.component';
 
 const appRoutes: Routes = [
   {
@@ -131,6 +134,10 @@ const appRoutes: Routes = [
     path: 'addstm', 
     component: AddstockComponent 
   },
+  {
+    path: 'showOrderMaterials',
+    component: ShowOrderMaterialsComponent
+  }
 
 ];
 
@@ -156,7 +163,10 @@ const appRoutes: Routes = [
     StockComponent,
     ShowlotComponent,
     AddlotComponent,
-    DialogCustomerComponent
+    DialogCustomerComponent,
+    PurchaseOrderComponent,
+    ShowOrderMaterialsComponent,
+    EditStatusMaterialsComponent
   ],
   entryComponents:[DialogCustomerComponent],
   imports: [
