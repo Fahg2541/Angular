@@ -6,6 +6,7 @@ import { CustomersService } from '../../Service/customers.service';
 import * as _ from 'lodash';
 // import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from "ngx-spinner";
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-dialog-customer',
@@ -14,7 +15,6 @@ import { NgxSpinnerService } from "ngx-spinner";
 })
 export class DialogCustomerComponent{
 
-  private CustomersService: CustomersService;
   private files: File[] = [];
   private router: Router;
   private uploadRoute: string = 'http://localhost:5000/api/Customers';
@@ -29,7 +29,22 @@ export class DialogCustomerComponent{
   uploadComplete: boolean = false;
   serverResponse: any;
 
-  constructor(private Customer: CustomersService,
+  customersList: any[];
+  customer_id: string;
+  customersMessage: string;
+  fileName = 'Customers.xlsx';
+  searchText: string;
+  term: string;
+  filterTerm: string;
+  page:any = 1;
+  limit: any = 10;
+  skip: any;
+  categoryArr:any;
+  totalCount: any;
+  dataArr: any;
+
+  constructor(private http: HttpClient,
+    private Customer: CustomersService,
     // private toastr: ToastrService,
     private route: ActivatedRoute,
     private spinner: NgxSpinnerService,) { }
@@ -38,7 +53,9 @@ export class DialogCustomerComponent{
 
     this.formImport = new FormGroup({
       importFile: new FormControl('', Validators.required)
-    })
+    }),
+
+    this.getCustomers();
   }
 
   ngOnDestroy() {
@@ -60,6 +77,20 @@ export class DialogCustomerComponent{
       this.uploadComplete = true
       this.serverResponse = event.body
     }
+  }
+
+  handleSubmit(event: any, formImport: FormGroup) {
+    event.preventDefault()
+    let submittedData = formImport.value
+
+    this.fileUploadSub = this.Customer.fileUpload(
+      this.fileToUpload,
+      submittedData
+    ).subscribe(
+      event => this.handleProgress(event),
+      error => {
+        console.log("server error")
+      });
   }
 
   // handleSubmit(event: any, formImport: FormGroup) {
@@ -84,6 +115,26 @@ export class DialogCustomerComponent{
     this.fileToUpload = files.item(0);
     console.log("file input has changed. The file is")
   }
+
+  getCustomers()
+    {
+      this.spinner.show();
+      if(this.page == 1){
+          this.skip = 0;
+      } else{
+          this.skip = (this.page-1) * this.limit;
+      }
+      var requestObj = {
+             'limit': this.limit,
+             'skip':  this.skip
+             
+      }
+      this.Customer.getData1(requestObj).subscribe((res:any)=>{
+        this.spinner.hide();
+        this.dataArr=res.data;
+        this.totalCount = res.totalRecord;
+      })
+    }
 
   
 }
