@@ -14,27 +14,61 @@ export class CustomersService {
   selectedCustomer: customers = new customers();
   customer: customers[];
 
-  constructor(private httpclient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  fileUpload(fileItem:File, extraData?:object):any{
+  fileUpload(fileItem: File, extraData?: object): any {
     let apiCreateEmdpoint = `${this.apiBaseURL}Customers`
     const formData: FormData = new FormData();
     formData.append('fileItem', fileItem, fileItem.name);
 
-    if(extraData)
-    {
-      for(let key in extraData)
-      {
+    if (extraData) {
+      for (let key in extraData) {
         formData.append(key, extraData[key])
       }
     }
-    const req = new HttpRequest('POST', apiCreateEmdpoint,formData, {
+    const req = new HttpRequest('POST', apiCreateEmdpoint, formData, {
       reportProgress: true
     });
-    return this.httpclient.request(req)
+    return this.http.request(req)
   }
 
-  getData() {
-    return this.httpclient.get('http://localhost:5000/api/supplier11');
+  optionalFileUpload(fileItem?: File, extraData?: object): any {
+    let apiCreateEmdpoint = `${this.apiBaseURL}Customers`
+    const formData: FormData = new FormData();
+    let fileName;
+    if (extraData) {
+      for (let key in extraData) {
+        if (key == 'fileName') {
+          fileName = extraData[key];
+        }
+        formData.append(key, extraData[key])
+      }
+    }
+    if (fileItem) {
+      if (!fileName) {
+        fileName = fileItem.name
+      }
+      formData.append('Excel', fileItem, fileName);
+    }
+    const req = new HttpRequest('POST', apiCreateEmdpoint, formData, {
+      reportProgress: true
+    });
+
+    return this.http.request(req)
+  }
+  list(): Observable<any> {
+    const listEndpoint = `${this.apiBaseURL}Customers`
+    return this.http.get(listEndpoint)
+  }
+
+  showCustomer() {
+    let httpParams = new HttpParams();
+
+    const observable = this.http.get<any[]>('Customers', { params: httpParams })
+    return observable;
+
+  }
+  getData1(data) {
+    return this.http.post('http://localhost:5000/api/Customers', data);
   }
 }
